@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ezy-5U-YyG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="Mqc-h5-b6V">
+            <objects>
+                <tableViewController id="LBq-6J-gXA" customClass="PlanetsTableViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h9f-nq-Kus">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="planetCell" rowHeight="76" id="8rf-DW-JGC">
+                                <rect key="frame" x="0.0" y="28" width="375" height="76"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8rf-DW-JGC" id="EbT-yd-sbP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="D73-vT-KIl" kind="show" identifier="toPlanetDetail" id="YzS-IF-N2f"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LBq-6J-gXA" id="qVf-ZX-Bcf"/>
+                            <outlet property="delegate" destination="LBq-6J-gXA" id="TlM-6i-KkD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="ZIC-vr-xeC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ULl-MY-Wg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.3999999999999999" y="116.49175412293854"/>
+        </scene>
+        <!--Planet View Controller-->
+        <scene sceneID="hpf-XW-ocL">
+            <objects>
+                <viewController id="D73-vT-KIl" customClass="PlanetViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gyw-kE-0uX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Planet)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bb-wz-0be" userLabel="Planet Name Label">
+                                <rect key="frame" x="37.5" y="114" width="300" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ozm-bE-JY8" userLabel="Planet Image View">
+                                <rect key="frame" x="112.5" y="181" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ozm-bE-JY8" secondAttribute="height" multiplier="1:1" id="IrH-sG-alV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diameter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhF-5e-C1z">
+                                <rect key="frame" x="37" y="391" width="300" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daylength:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkt-Uv-rbP">
+                                <rect key="frame" x="37" y="477.5" width="300" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="millionKMsFromSun:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wli-ns-P1S">
+                                <rect key="frame" x="37" y="564" width="300" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pkt-Uv-rbP" firstAttribute="top" secondItem="GhF-5e-C1z" secondAttribute="bottom" constant="60" id="Ari-Iz-fjI"/>
+                            <constraint firstItem="GhF-5e-C1z" firstAttribute="width" secondItem="gyw-kE-0uX" secondAttribute="width" multiplier="0.8" id="JUD-TP-BPY"/>
+                            <constraint firstItem="2bb-wz-0be" firstAttribute="centerX" secondItem="VbR-XD-ovD" secondAttribute="centerX" id="JaY-DN-H67"/>
+                            <constraint firstItem="GhF-5e-C1z" firstAttribute="top" secondItem="ozm-bE-JY8" secondAttribute="bottom" constant="60" id="NhH-3n-k4d"/>
+                            <constraint firstItem="GhF-5e-C1z" firstAttribute="centerX" secondItem="VbR-XD-ovD" secondAttribute="centerX" id="Rce-I9-WNF"/>
+                            <constraint firstItem="Wli-ns-P1S" firstAttribute="top" secondItem="pkt-Uv-rbP" secondAttribute="bottom" constant="60" id="Yrd-Ze-uBj"/>
+                            <constraint firstItem="2bb-wz-0be" firstAttribute="top" secondItem="VbR-XD-ovD" secondAttribute="top" constant="50" id="Z7I-TU-p6p"/>
+                            <constraint firstItem="Wli-ns-P1S" firstAttribute="width" secondItem="gyw-kE-0uX" secondAttribute="width" multiplier="0.8" id="aaT-JA-UnF"/>
+                            <constraint firstItem="pkt-Uv-rbP" firstAttribute="centerX" secondItem="VbR-XD-ovD" secondAttribute="centerX" id="cBC-rO-MtF"/>
+                            <constraint firstItem="ozm-bE-JY8" firstAttribute="top" secondItem="2bb-wz-0be" secondAttribute="bottom" constant="24" id="dcF-qT-r6O"/>
+                            <constraint firstItem="ozm-bE-JY8" firstAttribute="centerX" secondItem="VbR-XD-ovD" secondAttribute="centerX" id="kcn-rN-by3"/>
+                            <constraint firstItem="Wli-ns-P1S" firstAttribute="centerX" secondItem="VbR-XD-ovD" secondAttribute="centerX" id="luQ-wW-nHB"/>
+                            <constraint firstItem="ozm-bE-JY8" firstAttribute="width" secondItem="gyw-kE-0uX" secondAttribute="width" multiplier="0.4" id="mM5-D5-Y0N"/>
+                            <constraint firstItem="pkt-Uv-rbP" firstAttribute="width" secondItem="gyw-kE-0uX" secondAttribute="width" multiplier="0.8" id="nFi-Gy-mDj"/>
+                            <constraint firstItem="2bb-wz-0be" firstAttribute="width" secondItem="gyw-kE-0uX" secondAttribute="width" multiplier="0.8" id="qZK-9d-tz7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VbR-XD-ovD"/>
+                    </view>
+                    <connections>
+                        <outlet property="daylength" destination="pkt-Uv-rbP" id="UYF-mJ-MxF"/>
+                        <outlet property="diameterLabel" destination="GhF-5e-C1z" id="XKN-WG-0Pi"/>
+                        <outlet property="millionsKMsFromSun" destination="Wli-ns-P1S" id="O9o-fb-vst"/>
+                        <outlet property="planetImageView" destination="ozm-bE-JY8" id="Dyx-CJ-jc4"/>
+                        <outlet property="planetNameLabel" destination="2bb-wz-0be" id="RKm-tw-fO6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFh-tC-Mwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872.79999999999995" y="116.49175412293854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RuO-EL-L7X">
+            <objects>
+                <navigationController id="Ezy-5U-YyG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U4A-c0-Vlg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LBq-6J-gXA" kind="relationship" relationship="rootViewController" id="Bqc-3H-DOK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tkd-gf-bsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-953" y="117"/>
+        </scene>
+    </scenes>
+</document>
